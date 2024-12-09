@@ -1,43 +1,50 @@
 using UnityEngine;
 
-public class Rocket : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     //Declarations
 
     //Movement
     [SerializeField] private float speed;
-    [SerializeField] private float horizontalBound;
+    [SerializeField] private int life;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        speed = 9;
-        horizontalBound = 11;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Limit movement area
-        LimitMovement();
+        
     }
 
     void FixedUpdate()
     {
-        //Move the rocket
+        //Enemy movement
         Movement();
     }
 
-    //Move rocket to right
+    //Enemy movement
     private void Movement()
     {
-        transform.Translate(Vector3.right * Time.deltaTime * speed);
+
     }
 
-    //Limit movement area
-    private void LimitMovement()
+    //Detect damage
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (transform.position.x > horizontalBound)
+        if (collision.transform.CompareTag("Rocket"))
+        {
+            life--;
+            CheckLife();
+        }
+    }
+
+    private void CheckLife()
+    {
+        if(life <= 0)
         {
             gameObject.SetActive(false);
         }
