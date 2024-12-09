@@ -1,4 +1,8 @@
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour
 {
@@ -12,7 +16,11 @@ public class Player : MonoBehaviour
     [SerializeField] private float verticalBound;
 
     //Attack
-    [SerializeField] private GameObject bullet;
+    [SerializeField] private GameObject rocket;
+    [SerializeField] private List<GameObject> pooledRocket;
+    [SerializeField] private GameObject rocketPoolContainer;
+
+    private bool isRecharging;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,6 +29,10 @@ public class Player : MonoBehaviour
         speed = 5;
         horizontalBound = 10;
         verticalBound = 5.3f;
+
+        //Instantiate pooledRocket
+        InstancePool(10);
+        TurnOffPooledRocket();
     }
 
     // Update is called once per frame
@@ -71,14 +83,62 @@ public class Player : MonoBehaviour
         }
     }
 
+    //Create rocket instances
+    void InstancePool(int amount)
+    {
+        for (int i = 0; i < amount; i++)
+        {
+            GameObject spawnObj = Instantiate(rocket, transform.position, rocket.transform.rotation);
+            pooledRocket.Add(spawnObj);
+            spawnObj.transform.SetParent(rocketPoolContainer.transform);
+        }
+    }
+
+    //Turn off rocket instances
+    void TurnOffPooledRocket()
+    {
+        foreach (var clon in pooledRocket)
+        {
+            clon.SetActive(false);
+        }
+    }
+
     //Player attack
     private void Attack()
     {
-        //Throw the bullet
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetMouseButton(0) && !isRecharging)
         {
-            Instantiate(bullet, transform.position, bullet.transform.rotation);
+            isRecharging = true;
+
+            //Select rocket to attack
+            GameObject ObjectToActivate = GetOffObject();
+            ObjectToActivate.transform.position = transform.position;
+            GetOffObject().SetActive(true);
+
+            //Rocket time to recharging
+            StartCoroutine(RechargingTime());
+        }
+    }
+
+    //Select rocket to attack
+    private GameObject GetOffObject()
+    {
+        for (int i = 0; i < pooledRocket.Count; i++)
+        {
+            if (!pooledRocket[i].activeInHierarchy)
+            {
+                return pooledRocket[i];
+            }
         }
 
+        InstancePool(1);
+        return pooledRocket.Last<GameObject>();
+    }
+
+    //Rocket time to recharging
+    IEnumerator RechargingTime()
+    {
+        yield return new WaitForSeconds(1);
+        isRecharging = false;
     }
 }
