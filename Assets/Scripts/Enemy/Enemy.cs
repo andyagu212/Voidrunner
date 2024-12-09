@@ -35,7 +35,7 @@ public class Enemy : MonoBehaviour
     //Detect damage
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.CompareTag("Rocket"))
+        if (collision.transform.CompareTag("PlayerRocket"))
         {
             life--;
             CheckLife();
