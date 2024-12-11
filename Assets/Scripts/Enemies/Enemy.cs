@@ -37,15 +37,28 @@ public class Enemy : MonoBehaviour
     {
         if (collision.transform.CompareTag("PlayerRocket"))
         {
-            life--;
-            CheckLife();
+            //Decrease life
+            TakeDamage();
         }
     }
 
-    private void CheckLife()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(life <= 0)
+        if (collision.transform.CompareTag("Shield"))
         {
+            //Decrease life
+            TakeDamage();
+        }
+    }
+
+    //Decrease life
+    private void TakeDamage()
+    {
+        life--;
+
+        if (life <= 0)
+        {
+            //Disable enemy
             gameObject.SetActive(false);
         }
     }

@@ -19,8 +19,14 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject rocket;
     [SerializeField] private List<GameObject> pooledRocket;
     [SerializeField] private GameObject rocketPoolContainer;
-
     private bool isRecharging;
+
+    //Defense
+    [SerializeField] private GameObject shield;
+    private bool haveShied;
+
+    //Game
+    [SerializeField] private int life;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -140,5 +146,33 @@ public class Player : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         isRecharging = false;
+    }
+
+    //Collisions
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.transform.CompareTag("ShieldPowerUp"))
+        {
+            //Activate shield
+            shield.SetActive(true);
+            haveShied = true;
+        }
+
+        if (collision.transform.CompareTag("Enemy"))
+        {
+            //Decrease life
+            TakeDamage();
+        }
+    }
+
+    //Decrease life
+    private void TakeDamage()
+    {
+        life--;
+
+        if(life <= 0)
+        {
+            //GameOver();
+        }
     }
 }

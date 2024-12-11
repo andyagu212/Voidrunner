@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - PlayerRocket
+  - ShieldPowerUp
+  - Shield
+  - Enemy
   layers:
   - Default
   - TransparentFX
