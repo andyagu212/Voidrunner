@@ -42,5 +42,17 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Weapons
+    uniqueID: 3154386147
+    locked: 0
+  - name: Eenemy
+    uniqueID: 81976115
+    locked: 0
+  - name: Player
+    uniqueID: 974606757
+    locked: 0
+  - name: Shields
+    uniqueID: 1928567965
+    locked: 0
   m_RenderingLayers:
   - Default
