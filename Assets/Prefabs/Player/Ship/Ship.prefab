@@ -208,6 +208,12 @@ MonoBehaviour:
   rocketPoolContainer: {fileID: 0}
   shield: {fileID: 3783295336761924296}
   life: 0
+  shipSpriteRendrer: {fileID: 6870107968795845440}
+  shipSprites:
+  - {fileID: 6372854951805474705, guid: da0273720e7c53c43923664b7fb95426, type: 3}
+  - {fileID: 5091398421201204211, guid: 78cdb8ebd20bcc4418e3a14d9b28a6a6, type: 3}
+  - {fileID: -4835859195297287297, guid: 6c2fdfa5cacc8594a96b66c3d5f44f10, type: 3}
+  - {fileID: -5448727121883926364, guid: a875f69762bae7f4da8325942c02531e, type: 3}
 --- !u!1001 &818950997022013318
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -259,6 +265,10 @@ PrefabInstance:
     - target: {fileID: 4601984510427721038, guid: fc2cff1c59b492045b42cf33b0ded4b4, type: 3}
       propertyPath: m_Name
       value: Shield
+      objectReference: {fileID: 0}
+    - target: {fileID: 4601984510427721038, guid: fc2cff1c59b492045b42cf33b0ded4b4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

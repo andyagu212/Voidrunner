@@ -27,6 +27,8 @@ public class Player : MonoBehaviour
 
     //Game
     [SerializeField] private int life;
+    [SerializeField] private SpriteRenderer shipSpriteRendrer;
+    [SerializeField] private List<Sprite> shipSprites;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -35,6 +37,7 @@ public class Player : MonoBehaviour
         speed = 5;
         horizontalBound = 10;
         verticalBound = 5.3f;
+        life = 4;
 
         //Instantiate pooledRocket
         InstancePool(10);
@@ -156,23 +159,41 @@ public class Player : MonoBehaviour
             //Activate shield
             shield.SetActive(true);
             haveShied = true;
-        }
+        }  
+    }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
         if (collision.transform.CompareTag("Enemy"))
         {
-            //Decrease life
-            TakeDamage();
+            if (haveShied)
+            {
+                haveShied = false;
+            }
+            else
+            {
+                //Decrease life
+                TakeDamage();
+            }  
         }
     }
 
     //Decrease life
     private void TakeDamage()
     {
-        life--;
+        life--; 
 
-        if(life <= 0)
+        if (life <= 0)
         {
-            //GameOver();
+            gameObject.SetActive(false);
+            UIManager.Instance.GameOver();
+            GameManager.Instance.PauseGame();
+        }
+
+        else
+        {
+            UIManager.Instance.ChangeLife(life);
+            shipSpriteRendrer.sprite = shipSprites[life - 1];
         }
     }
 }
