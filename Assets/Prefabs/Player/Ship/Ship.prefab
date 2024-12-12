@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 2007893603110182192}
   - component: {fileID: 6567292868507074419}
   - component: {fileID: 5996624515096006067}
+  - component: {fileID: 2797815711084196814}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Untagged
@@ -119,6 +120,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 673150159666216269}
+  - {fileID: 3239174394964042284}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &6567292868507074419
@@ -184,3 +186,92 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2797815711084196814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8143997546273749198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb389fd7e705a394d80aed597a504c83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  horizontalInput: 0
+  VerticallInput: 0
+  horizontalBound: 0
+  verticalBound: 0
+  rocket: {fileID: 367257577914276990, guid: ccc65eed45d8e1a439aa42c00b97be56, type: 3}
+  pooledRocket: []
+  rocketPoolContainer: {fileID: 0}
+  shield: {fileID: 3783295336761924296}
+  life: 0
+--- !u!1001 &818950997022013318
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2007893603110182192}
+    m_Modifications:
+    - target: {fileID: 2859403565123605930, guid: fc2cff1c59b492045b42cf33b0ded4b4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2859403565123605930, guid: fc2cff1c59b492045b42cf33b0ded4b4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2859403565123605930, guid: fc2cff1c59b492045b42cf33b0ded4b4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2859403565123605930, guid: fc2cff1c59b492045b42cf33b0ded4b4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2859403565123605930, guid: fc2cff1c59b492045b42cf33b0ded4b4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2859403565123605930, guid: fc2cff1c59b492045b42cf33b0ded4b4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2859403565123605930, guid: fc2cff1c59b492045b42cf33b0ded4b4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2859403565123605930, guid: fc2cff1c59b492045b42cf33b0ded4b4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2859403565123605930, guid: fc2cff1c59b492045b42cf33b0ded4b4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2859403565123605930, guid: fc2cff1c59b492045b42cf33b0ded4b4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4601984510427721038, guid: fc2cff1c59b492045b42cf33b0ded4b4, type: 3}
+      propertyPath: m_Name
+      value: Shield
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fc2cff1c59b492045b42cf33b0ded4b4, type: 3}
+--- !u!4 &3239174394964042284 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2859403565123605930, guid: fc2cff1c59b492045b42cf33b0ded4b4, type: 3}
+  m_PrefabInstance: {fileID: 818950997022013318}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3783295336761924296 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4601984510427721038, guid: fc2cff1c59b492045b42cf33b0ded4b4, type: 3}
+  m_PrefabInstance: {fileID: 818950997022013318}
+  m_PrefabAsset: {fileID: 0}
