@@ -1,0 +1,399 @@
+fileFormatVersion: 2
+guid: b5492408cec9f0e4ba555600e23eae78
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8644274299609958919
+    second: Nautolan Ship - Fighter_0
+  - first:
+      213: 7576596205006186189
+    second: Nautolan Ship - Fighter_1
+  - first:
+      213: 463505131332897656
+    second: Nautolan Ship - Fighter_2
+  - first:
+      213: -4212683733995160692
+    second: Nautolan Ship - Fighter_3
+  - first:
+      213: -3236080527876115002
+    second: Nautolan Ship - Fighter_4
+  - first:
+      213: 8751021602411699697
+    second: Nautolan Ship - Fighter_5
+  - first:
+      213: 7252493688964741181
+    second: Nautolan Ship - Fighter_6
+  - first:
+      213: -4114409716598465381
+    second: Nautolan Ship - Fighter_7
+  - first:
+      213: -7247581163034710779
+    second: Nautolan Ship - Fighter_8
+  - first:
+      213: -3237409901004879438
+    second: Nautolan Ship - Fighter_9
+  - first:
+      213: -1950501612726669452
+    second: Nautolan Ship - Fighter_10
+  - first:
+      213: 4242049294055941543
+    second: Nautolan Ship - Fighter_11
+  - first:
+      213: -7815206944192292560
+    second: Nautolan Ship - Fighter_12
+  - first:
+      213: -6961746417420202613
+    second: Nautolan Ship - Fighter_13
+  - first:
+      213: 9185906319507026792
+    second: Nautolan Ship - Fighter_14
+  - first:
+      213: -5413876474569886672
+    second: Nautolan Ship - Fighter_15
+  - first:
+      213: 6024073881876156315
+    second: Nautolan Ship - Fighter_16
+  - first:
+      213: -4293106486342943349
+    second: Nautolan Ship - Fighter_17
+  - first:
+      213: 8973617023941391424
+    second: Nautolan Ship - Fighter_18
+  - first:
+      213: 8035957774010688013
+    second: Nautolan Ship - Fighter_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 25
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Nautolan Ship - Fighter_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 4
+        width: 60
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f5b5b6e25e590880800000000000000
+      internalID: -8644274299609958919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Fighter_1
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 4
+        width: 60
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc667fd1b1a752960800000000000000
+      internalID: 7576596205006186189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Fighter_2
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 4
+        width: 60
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87b0ba01673be6600800000000000000
+      internalID: 463505131332897656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Fighter_3
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 4
+        width: 60
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8bf624b67a8985c0800000000000000
+      internalID: -4212683733995160692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Fighter_4
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 4
+        width: 60
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c5b267c7e12713d0800000000000000
+      internalID: -3236080527876115002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Fighter_5
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 4
+        width: 60
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fdd48158cfd17970800000000000000
+      internalID: 8751021602411699697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Fighter_6
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 4
+        width: 60
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d387182b59806a460800000000000000
+      internalID: 7252493688964741181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Fighter_7
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 4
+        width: 60
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9c9bbd692ea6e6c0800000000000000
+      internalID: -4114409716598465381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 730d69c0a0092524c89de3ae841be38d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Nautolan Ship - Fighter_0: -8644274299609958919
+      Nautolan Ship - Fighter_1: 7576596205006186189
+      Nautolan Ship - Fighter_10: -1950501612726669452
+      Nautolan Ship - Fighter_11: 4242049294055941543
+      Nautolan Ship - Fighter_12: -7815206944192292560
+      Nautolan Ship - Fighter_13: -6961746417420202613
+      Nautolan Ship - Fighter_14: 9185906319507026792
+      Nautolan Ship - Fighter_15: -5413876474569886672
+      Nautolan Ship - Fighter_16: 6024073881876156315
+      Nautolan Ship - Fighter_17: -4293106486342943349
+      Nautolan Ship - Fighter_18: 8973617023941391424
+      Nautolan Ship - Fighter_19: 8035957774010688013
+      Nautolan Ship - Fighter_2: 463505131332897656
+      Nautolan Ship - Fighter_3: -4212683733995160692
+      Nautolan Ship - Fighter_4: -3236080527876115002
+      Nautolan Ship - Fighter_5: 8751021602411699697
+      Nautolan Ship - Fighter_6: 7252493688964741181
+      Nautolan Ship - Fighter_7: -4114409716598465381
+      Nautolan Ship - Fighter_8: -7247581163034710779
+      Nautolan Ship - Fighter_9: -3237409901004879438
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

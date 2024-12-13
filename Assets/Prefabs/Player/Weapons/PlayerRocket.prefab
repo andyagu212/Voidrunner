@@ -85,6 +85,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 9
   horizontalBound: 11
+  rocketAudioClip: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
 --- !u!1 &1975743328781236841
 GameObject:
   m_ObjectHideFlags: 0

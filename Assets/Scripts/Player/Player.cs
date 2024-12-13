@@ -30,6 +30,9 @@ public class Player : MonoBehaviour
     [SerializeField] private SpriteRenderer shipSpriteRendrer;
     [SerializeField] private List<Sprite> shipSprites;
 
+    //Audio
+    [SerializeField] private AudioClip explosionAudioClip;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -195,6 +198,9 @@ public class Player : MonoBehaviour
 
         else
         {
+            //Play audio clip explosion
+            AudioManager.Instance.PlaySFX(explosionAudioClip);
+
             //Decrease life
             UIManager.Instance.ChangeLife(life);
             shipSpriteRendrer.sprite = shipSprites[life - 1];

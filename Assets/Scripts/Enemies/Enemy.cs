@@ -5,10 +5,13 @@ public class Enemy : MonoBehaviour
     //Declarations
 
     //Movement
-    [SerializeField] private float speed;
+    [SerializeField] protected float speed;
     [SerializeField] private int life;
     [SerializeField] private Vector3 spawnPosition;
     [SerializeField] private float horizontalBound;
+
+    //Audio
+    [SerializeField] private AudioClip explosionAudioClip;
 
     //Save spawn position
     private void Awake()
@@ -84,6 +87,9 @@ public class Enemy : MonoBehaviour
         if (life <= 0)
         {
             UIManager.Instance.IncreaseScore();
+
+            //Play audio clip explosion
+            AudioManager.Instance.PlaySFX(explosionAudioClip);
 
             //Disable enemy
             gameObject.SetActive(false);
