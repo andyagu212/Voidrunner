@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
@@ -7,6 +8,9 @@ public class UIManager : MonoBehaviour
 
     //Game
     [SerializeField] private List<GameObject> lifes;
+    private int score;
+    [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private TextMeshProUGUI gameOverScoreText;
     [SerializeField] private GameObject gameOver;
 
     //Create instance
@@ -43,9 +47,17 @@ public class UIManager : MonoBehaviour
         lifes[life].SetActive(false);
     }
 
+    //IncreaseScore
+    public void IncreaseScore()
+    {
+        score += 100;
+        scoreText.text = "Score: " + score.ToString();
+    }
+
     //Disable lifes in UI
     public void GameOver()
     {
         gameOver.SetActive(true);
+        gameOverScoreText.text = "Score: " + score.ToString();
     }
 }

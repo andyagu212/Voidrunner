@@ -55,6 +55,7 @@ public class Player : MonoBehaviour
         Attack();
     }
 
+    //Movement
     void FixedUpdate()
     {
         //Move the player
@@ -82,9 +83,9 @@ public class Player : MonoBehaviour
         {
             transform.position = new Vector3(-horizontalBound, transform.position.y, transform.position.z);
         }
-        if (transform.position.y > verticalBound)
+        if (transform.position.y > verticalBound - 1)
         {
-            transform.position = new Vector3(transform.position.x, verticalBound, transform.position.z);
+            transform.position = new Vector3(transform.position.x, verticalBound - 1, transform.position.z);
         }
         if (transform.position.y < -verticalBound)
         {
@@ -151,7 +152,7 @@ public class Player : MonoBehaviour
         isRecharging = false;
     }
 
-    //Collisions
+    //Detect triggers
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.transform.CompareTag("ShieldPowerUp"))
@@ -162,6 +163,7 @@ public class Player : MonoBehaviour
         }  
     }
 
+    //Detect collisions
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.transform.CompareTag("Enemy"))
@@ -185,6 +187,7 @@ public class Player : MonoBehaviour
 
         if (life <= 0)
         {
+            //Game over
             gameObject.SetActive(false);
             UIManager.Instance.GameOver();
             GameManager.Instance.PauseGame();
@@ -192,6 +195,7 @@ public class Player : MonoBehaviour
 
         else
         {
+            //Decrease life
             UIManager.Instance.ChangeLife(life);
             shipSpriteRendrer.sprite = shipSprites[life - 1];
         }

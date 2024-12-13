@@ -7,11 +7,20 @@ public class Enemy : MonoBehaviour
     //Movement
     [SerializeField] private float speed;
     [SerializeField] private int life;
+    [SerializeField] private Vector3 spawnPosition;
+    [SerializeField] private float horizontalBound;
+
+    //Save spawn position
+    private void Awake()
+    {
+        //Initialize Values
+        spawnPosition = transform.position;
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -20,6 +29,13 @@ public class Enemy : MonoBehaviour
         
     }
 
+    //Reset initial position
+    private void OnEnable()
+    {
+        transform.position = spawnPosition;
+    }
+
+    //Movement
     void FixedUpdate()
     {
         //Enemy movement
@@ -27,9 +43,16 @@ public class Enemy : MonoBehaviour
     }
 
     //Enemy movement
-    private void Movement()
+    public virtual void Movement()
     {
-
+        if(transform.position.x <= -horizontalBound)
+        {
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            transform.Translate(Vector3.left * Time.deltaTime * speed);
+        }
     }
 
     //Detect damage
@@ -38,10 +61,12 @@ public class Enemy : MonoBehaviour
         if (collision.transform.CompareTag("PlayerRocket"))
         {
             //Decrease life
+            collision.gameObject.SetActive(false);
             TakeDamage();
         }
     }
 
+    //Detect collisions
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Shield"))
@@ -58,6 +83,8 @@ public class Enemy : MonoBehaviour
 
         if (life <= 0)
         {
+            UIManager.Instance.IncreaseScore();
+
             //Disable enemy
             gameObject.SetActive(false);
         }

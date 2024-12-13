@@ -22,6 +22,7 @@ public class Rocket : MonoBehaviour
         LimitMovement();
     }
 
+    //Movement
     void FixedUpdate()
     {
         //Move the rocket
