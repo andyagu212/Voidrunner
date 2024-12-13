@@ -7,4 +7,10 @@ public class CallGameManager : MonoBehaviour
     {
         GameManager.Instance.ChangeScene(sceneIndex);
     }
+
+    //Call active game manager
+    public void CallPauseGame()
+    {
+        GameManager.Instance.PauseGame();
+    }
 }

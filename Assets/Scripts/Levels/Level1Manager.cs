@@ -21,7 +21,6 @@ public class Level1Manager : MonoBehaviour
         
     }
 
-
     //TimeBetweenWaves
     IEnumerator TimeBetweenWaves()
     {
@@ -31,7 +30,7 @@ public class Level1Manager : MonoBehaviour
             ActivateWave();
             yield return new WaitForSeconds(5);
         }
-        SpawnBoss();
+        GameManager.Instance.ChangeScene(2);
     }
 
     //ActivateWave
@@ -71,11 +70,5 @@ public class Level1Manager : MonoBehaviour
                 enemies[4].SetActive(true);
                 break;
         }
-    }
-
-    //SpawnBoss
-    private void SpawnBoss()
-    {
-
     }
 }

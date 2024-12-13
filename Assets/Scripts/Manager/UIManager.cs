@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     private int score;
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI gameOverScoreText;
+    [SerializeField] private GameObject levelMenu;
     [SerializeField] private GameObject gameOver;
 
     //Create instance
@@ -38,7 +39,24 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //Pause
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            levelMenu.SetActive(true);
+            GameManager.Instance.PauseGame();
+        }
+    }
+
+    //Destroy this
+    public void DestroyThis()
+    {
+        Destroy(gameObject);
+    }
+
+    //Pause
+    private void Pause()
+    {
+        GameManager.Instance.PauseGame();
     }
 
     //Disable lifes in UI
