@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -8,6 +9,11 @@ public class UIManager : MonoBehaviour
 
     //Game
     [SerializeField] private List<GameObject> lifes;
+    [SerializeField] private List<GameObject> rocketWaves;
+    public Vector3 playerPosition;
+    public int lifePlayer;
+    public bool shield;
+    public int rocketWavesIndex;
     private int score;
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI gameOverScoreText;
@@ -39,7 +45,11 @@ public class UIManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        if (SceneManager.GetActiveScene().name == "Level1")
+        {
+            //Initialize Values
+            lifePlayer = 4;
+        }
     }
 
     // Update is called once per frame
@@ -69,6 +79,22 @@ public class UIManager : MonoBehaviour
     public void ChangeLife(int life)
     {
         lifes[life].SetActive(false);
+        lifePlayer = life;
+    }
+
+    //Chance number of rocket waves
+    public void ChangeRocketWave(int add)
+    {
+        if (add > 0 && rocketWavesIndex <= 2)
+        {
+            rocketWaves[rocketWavesIndex].SetActive(true);
+            rocketWavesIndex++;
+        }
+        if(add < 0 && rocketWavesIndex > 0)
+        {
+            rocketWaves[rocketWavesIndex-1].SetActive(false);
+            rocketWavesIndex--;
+        }
     }
 
     //IncreaseScore
