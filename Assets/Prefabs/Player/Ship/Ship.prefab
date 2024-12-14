@@ -216,6 +216,7 @@ MonoBehaviour:
   - {fileID: -5448727121883926364, guid: a875f69762bae7f4da8325942c02531e, type: 3}
   rocketAudioClip: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   explosionAudioClip: {fileID: 8300000, guid: 7bef0064f8567430cac22499c6b93d4f, type: 3}
+  powerUpAudioClip: {fileID: 8300000, guid: 79180f511d89441b9aa23ccae1992fe0, type: 3}
 --- !u!1001 &818950997022013318
 PrefabInstance:
   m_ObjectHideFlags: 0

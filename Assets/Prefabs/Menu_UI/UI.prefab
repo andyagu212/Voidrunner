@@ -489,6 +489,12 @@ MonoBehaviour:
   - {fileID: 6172311672547390053}
   - {fileID: 2200242073653007109}
   - {fileID: 1669938485523827294}
+  rocketWaves:
+  - {fileID: 4381794199246765151}
+  - {fileID: 7195829704115631433}
+  - {fileID: 6836801981104291206}
+  lifePlayer: 0
+  rocketWavesIndex: 0
   scoreText: {fileID: 7683768551104859039}
   gameOverScoreText: {fileID: 6462319848687231385}
   victoryScoreText: {fileID: 1020546366002179835}
@@ -2253,7 +2259,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5152175165062818530, guid: ba97db1297d8f09418d707456f5b591d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8819564109837132481, guid: ba97db1297d8f09418d707456f5b591d, type: 3}
       propertyPath: m_Pivot.x
@@ -2374,7 +2380,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7059705054109782429, guid: f58076ddf28c2c449b4c02c32457009c, type: 3}
+  m_Sprite: {fileID: -4381693984270815106, guid: 8ea16afe6cb9df0409fb8584064d9bfe, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

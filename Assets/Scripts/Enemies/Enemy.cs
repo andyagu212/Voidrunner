@@ -27,18 +27,6 @@ public class Enemy : MonoBehaviour
         spawnPosition = transform.position;
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     //Reset initial position
     private void OnEnable()
     {
@@ -97,12 +85,12 @@ public class Enemy : MonoBehaviour
     {
         life--;
 
+        //Play audio clip explosion
+        AudioManager.Instance.PlaySFX(explosionAudioClip);
+
         if (life <= 0)
         {
             UIManager.Instance.IncreaseScore();
-
-            //Play audio clip explosion
-            AudioManager.Instance.PlaySFX(explosionAudioClip);
 
             //Activate destruction animation
             animator.SetBool("isDestroyed", true);

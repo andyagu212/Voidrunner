@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     [SerializeField] private List<GameObject> pooledRocket;
     [SerializeField] private GameObject rocketPoolContainer;
     private bool isRecharging;
+    private int rocketWave;
 
     //Defense
     [SerializeField] private GameObject shield;
@@ -33,6 +34,7 @@ public class Player : MonoBehaviour
     //Audio
     [SerializeField] private AudioClip rocketAudioClip;
     [SerializeField] private AudioClip explosionAudioClip;
+    [SerializeField] private AudioClip powerUpAudioClip;
 
     //Instantiate pooledRocket
     private void Awake()
@@ -49,6 +51,9 @@ public class Player : MonoBehaviour
         horizontalBound = 10;
         verticalBound = 5.3f;
         life = 4;
+
+        //Data persistence
+        DataPersistence();
     }
 
     // Update is called once per frame
@@ -62,11 +67,34 @@ public class Player : MonoBehaviour
         Attack();
     }
 
+    //Data persistence
+    private void DataPersistence()
+    {
+        if (SceneManager.GetActiveScene().name != "Level1")
+        {
+            transform.position = UIManager.Instance.playerPosition;
+
+            if (UIManager.Instance.lifePlayer < 4)
+            {
+                life = UIManager.Instance.lifePlayer;
+            }
+
+            if (UIManager.Instance.shield)
+            {
+                shield.SetActive(true);
+            }
+
+            rocketWave = UIManager.Instance.rocketWavesIndex;
+            shipSpriteRendrer.sprite = shipSprites[life - 1];
+        } 
+    }
+
     //Movement
     void FixedUpdate()
     {
         //Move the player
         Movement();
+        UIManager.Instance.playerPosition = transform.position;
     }
 
     //Move the player
@@ -138,6 +166,36 @@ public class Player : MonoBehaviour
             //Rocket time to recharging
             StartCoroutine(RechargingTime());
         }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if(rocketWave > 0)
+            {
+                //Decrease rocketWave
+                rocketWave--;
+                UIManager.Instance.ChangeRocketWave(-1);
+
+                //Rocket wave powwer
+                StartCoroutine(RocketWave());
+            }
+        }
+    }
+
+    //Rocket wave powwer
+    IEnumerator RocketWave()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            //Select rockets to attack
+            GameObject ObjectToActivate = GetOffObject();
+            ObjectToActivate.transform.position = transform.position;
+            GetOffObject().SetActive(true);
+
+            //Play audio clip rocket
+            AudioManager.Instance.PlaySFX(rocketAudioClip);
+
+            //Wait
+            yield return new WaitForSeconds(0.3f);
+        }
     }
 
     //Select rocket to attack
@@ -170,7 +228,30 @@ public class Player : MonoBehaviour
             //Activate shield
             shield.SetActive(true);
             haveShied = true;
-        }  
+            UIManager.Instance.shield = true;
+
+            //Desactivate power up sprite
+            collision.gameObject.SetActive(false);
+
+            //Play audio clip power up
+            AudioManager.Instance.PlaySFX(powerUpAudioClip);
+        }
+
+        if (collision.transform.CompareTag("WeaponPowerUp"))
+        {
+            if (rocketWave < 3)
+            {
+                //Increase rocketWave
+                rocketWave++;
+                UIManager.Instance.ChangeRocketWave(1);
+            }
+
+            //Play audio clip power up
+            AudioManager.Instance.PlaySFX(powerUpAudioClip);
+
+            //Desactivate power up sprite
+            collision.gameObject.SetActive(false);
+        }
     }
 
     //Detect collisions
@@ -181,6 +262,7 @@ public class Player : MonoBehaviour
             if (haveShied)
             {
                 haveShied = false;
+                UIManager.Instance.shield = false;
             }
             else
             {
