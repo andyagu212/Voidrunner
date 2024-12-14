@@ -224,4 +224,6 @@ MonoBehaviour:
   life: 1
   spawnPosition: {x: 0, y: 0, z: 0}
   horizontalBound: 12
+  colliderEnemy: {fileID: 8765712273886622365}
   explosionAudioClip: {fileID: 8300000, guid: 7bef0064f8567430cac22499c6b93d4f, type: 3}
+  animator: {fileID: 3939470741785337819}

@@ -8,9 +8,6 @@ public class Rocket : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float horizontalBound;
 
-    //Audio
-    [SerializeField] private AudioClip rocketAudioClip;
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,12 +20,6 @@ public class Rocket : MonoBehaviour
     {
         //Limit movement area
         LimitMovement();
-    }
-
-    //Play audio clip
-    private void OnEnable()
-    {
-        AudioManager.Instance.PlaySFX(rocketAudioClip);
     }
 
     //Movement

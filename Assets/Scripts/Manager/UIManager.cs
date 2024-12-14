@@ -11,8 +11,14 @@ public class UIManager : MonoBehaviour
     private int score;
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI gameOverScoreText;
+    [SerializeField] private TextMeshProUGUI victoryScoreText;
     [SerializeField] private GameObject levelMenu;
+    [SerializeField] private GameObject victory;
     [SerializeField] private GameObject gameOver;
+
+    //Audio
+    [SerializeField] private AudioClip victoryAudioClip;
+    [SerializeField] private AudioClip gameOverAudioClip;
 
     //Create instance
     public static UIManager Instance;
@@ -72,10 +78,29 @@ public class UIManager : MonoBehaviour
         scoreText.text = "Score: " + score.ToString();
     }
 
-    //Disable lifes in UI
+    //Active victory
+    public void Victory()
+    {
+        GameManager.Instance.PauseGame();
+
+        victory.SetActive(true);
+
+        //Play audio clip rocket
+        AudioManager.Instance.PlaySFX(victoryAudioClip);
+
+        victoryScoreText.text = "Score: " + score.ToString();
+    }
+
+    //Active game over
     public void GameOver()
     {
+        GameManager.Instance.PauseGame();
+
         gameOver.SetActive(true);
+
+        //Play audio clip rocket
+        AudioManager.Instance.PlaySFX(gameOverAudioClip);
+
         gameOverScoreText.text = "Score: " + score.ToString();
     }
 }
