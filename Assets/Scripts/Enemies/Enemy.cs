@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -10,8 +11,14 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Vector3 spawnPosition;
     [SerializeField] private float horizontalBound;
 
+    //Collider
+    [SerializeField] private Collider2D colliderEnemy;
+
     //Audio
     [SerializeField] private AudioClip explosionAudioClip;
+
+    //Animation
+    [SerializeField] private Animator animator;
 
     //Save spawn position
     private void Awake()
@@ -36,6 +43,12 @@ public class Enemy : MonoBehaviour
     private void OnEnable()
     {
         transform.position = spawnPosition;
+
+        //Active collider
+        colliderEnemy.enabled = true;
+
+        //Disable destruction animation
+        animator.SetBool("isDestroyed", false);
     }
 
     //Movement
@@ -91,8 +104,25 @@ public class Enemy : MonoBehaviour
             //Play audio clip explosion
             AudioManager.Instance.PlaySFX(explosionAudioClip);
 
+            //Activate destruction animation
+            animator.SetBool("isDestroyed", true);
+
+            //Disable collider
+            colliderEnemy.enabled = false;
+
             //Disable enemy
-            gameObject.SetActive(false);
+            StartCoroutine(TimeToDisable());
+        }
+    }
+
+    IEnumerator TimeToDisable()
+    {
+        yield return new WaitForSeconds(1f);
+        gameObject.SetActive(false);
+        
+        if(gameObject.name == "EnemyDreadnought")
+        {
+            UIManager.Instance.Victory();
         }
     }
 }

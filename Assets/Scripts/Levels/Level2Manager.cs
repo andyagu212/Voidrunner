@@ -29,7 +29,7 @@ public class Level2Manager : MonoBehaviour
         {
             int classEnemy = Random.Range(0, 2);
 
-            if(classEnemy == 0)
+            if (classEnemy == 0)
             {
                 ActivateWaveScout();
             }

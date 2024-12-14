@@ -31,7 +31,15 @@ public class Player : MonoBehaviour
     [SerializeField] private List<Sprite> shipSprites;
 
     //Audio
+    [SerializeField] private AudioClip rocketAudioClip;
     [SerializeField] private AudioClip explosionAudioClip;
+
+    //Instantiate pooledRocket
+    private void Awake()
+    {
+        InstancePool(10);
+        TurnOffPooledRocket();
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -41,10 +49,6 @@ public class Player : MonoBehaviour
         horizontalBound = 10;
         verticalBound = 5.3f;
         life = 4;
-
-        //Instantiate pooledRocket
-        InstancePool(10);
-        TurnOffPooledRocket();
     }
 
     // Update is called once per frame
@@ -128,6 +132,9 @@ public class Player : MonoBehaviour
             ObjectToActivate.transform.position = transform.position;
             GetOffObject().SetActive(true);
 
+            //Play audio clip rocket
+            AudioManager.Instance.PlaySFX(rocketAudioClip);
+
             //Rocket time to recharging
             StartCoroutine(RechargingTime());
         }
@@ -193,7 +200,6 @@ public class Player : MonoBehaviour
             //Game over
             gameObject.SetActive(false);
             UIManager.Instance.GameOver();
-            GameManager.Instance.PauseGame();
         }
 
         else
