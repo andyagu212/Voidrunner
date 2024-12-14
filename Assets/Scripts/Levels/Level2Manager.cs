@@ -68,7 +68,6 @@ public class Level2Manager : MonoBehaviour
 
             yield return new WaitForSeconds(20);
         }
-        GameManager.Instance.ChangeScene(3);
     }
 
     //Select random position for the power ups
